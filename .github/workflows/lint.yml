@@ -15,9 +15,12 @@ jobs:
       - name: checkout/clone the code
         uses: actions/checkout@v7
 
-  build:
-    needs: code
-    runs-on: ubuntu-latest
-    steps:
-      - name: build the application
-        run: echo "build the application" 
+      - name: install linter
+        run: pip install ruff
+
+  # build:
+  #   needs: code
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: build the application
+  #       run: echo "build the application" 
