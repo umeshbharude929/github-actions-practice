@@ -4,8 +4,9 @@
 name: Auto Linter
 
 on:
-  push:
-    paths: "*.py"
+  workflow_dispatch:
+  # push:
+  #   paths: "*.py"
 
 jobs:
   code-linting:
