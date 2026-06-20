@@ -1,0 +1,23 @@
+#GoaL: whenever someone changes the python code the linter will check the syntax format and indenatin is 
+# is currect or not 
+
+name: Auto Linter
+
+on:
+  push:
+    paths: "*.py"
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    #this step will automatically clone the code of the current branch into the runner 
+    steps:
+      - name: checkout/clone the code
+        uses: actions/checkout@v7
+
+  build:
+    needs: code
+    runs-on: ubuntu-latest
+    steps:
+      - name: build the application
+        run: echo "build the application" 
